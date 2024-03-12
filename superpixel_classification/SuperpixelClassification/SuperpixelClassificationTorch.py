@@ -173,8 +173,10 @@ class SuperpixelClassificationTorch(SuperpixelClassificationBase):
                 for cb in callbacks:
                     cb.on_train_batch_begin(i, logs=dict())
                 inputs, labels = data
+                print(f'{summary_repr(inputs)}')
                 info = f'inputs = {summary_repr(inputs)}'
                 logger.info(info)
+                print(f'{summary_repr(labels)}')
                 info = f'labels = {summary_repr(labels)}'
                 logger.info(info)
                 # zero the parameter gradients
